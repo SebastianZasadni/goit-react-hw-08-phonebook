@@ -50,6 +50,6 @@ export const ContactsList = () => {
       <Filter />
     </div>
   ) : (
-    <p>You have no contacts.</p>
+    <p className={css.noContactsParagraph}>You have no contacts.</p>
   );
 };
