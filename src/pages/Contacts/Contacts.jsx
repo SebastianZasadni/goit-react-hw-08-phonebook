@@ -6,7 +6,7 @@ import { ContactsForm } from 'components/ContactsForm/ContactsForm';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectIsLoading } from 'redux/contacts/selectors';
 
-export default function Contacts() {
+const Contacts = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
 
@@ -24,4 +24,6 @@ export default function Contacts() {
       <ContactsList />
     </>
   );
-}
+};
+
+export default Contacts;
