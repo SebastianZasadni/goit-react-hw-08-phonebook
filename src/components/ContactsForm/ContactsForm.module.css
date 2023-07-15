@@ -1,0 +1,9 @@
+.contactsForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+  }
