@@ -37,6 +37,8 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      const {status} = error.response;
+      if (status === 400){Notiflix.Notify.warning('Email or password isn`t correct.');}
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -63,7 +65,7 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get('/users/me');
+      const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
